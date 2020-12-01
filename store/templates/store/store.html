@@ -1,8 +1,9 @@
 <!--Loading static folder because it contains css files-->
+<!-- Inheriting from main.html -->
+{% extends 'store/main.html' %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-
-<h3>Store</h3>
-
+{% block content %}
+     <h3>Store</h3>
+{% endblock content %}
 
 
