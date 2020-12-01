@@ -3,7 +3,50 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-     <h3>Store</h3>
+     <div class="row">
+          <!-- 3 columns within our row -->
+		<div class="col-lg-4">
+             <!-- adding placeholder image -->
+             <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
+             <!-- wrapper for each product -->
+             <!-- box-element, product is our custom css -->
+			<div class="box-element product">
+                 <h6><strong>Product</strong></h6>
+				 <hr>
+
+                 <!-- adding button and giving some bootstrap -->
+                 <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                 <a class="btn btn-outline-success" href="#">View</a>
+                 <h4 style="display: inline-block; float: right"><strong>$20</strong></h4> <!-- Price of the product -->
+
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+             <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
+			<div class="box-element product">
+                 <h6><strong>Product</strong></h6>
+				 <hr>
+                 <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                 <a class="btn btn-outline-success" href="#">View</a>
+                 <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
+
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+             <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
+			<div class="box-element product">
+                 <h6><strong>Product</strong></h6>
+				 <hr>
+                 <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                 <a class="btn btn-outline-success" href="#">View</a>
+                 <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
+
+			</div>
+		</div>
+	</div>
+
 {% endblock content %}
 
 
