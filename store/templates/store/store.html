@@ -1,52 +1,19 @@
-<!--Loading static folder because it contains css files-->
-<!-- Inheriting from main.html -->
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-     <div class="row">
-          <!-- 3 columns within our row -->
-		<div class="col-lg-4">
-             <!-- adding placeholder image -->
-             <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
-             <!-- wrapper for each product -->
-             <!-- box-element, product is our custom css -->
-			<div class="box-element product">
-                 <h6><strong>Product</strong></h6>
-				 <hr>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-lg-4">
+            <img class="thumbnail" src="{{product.imageURL}}">
+            <div class="box-element product">
+                <h6><strong>{{product.name}}</strong></h6>
+                <hr>
 
-                 <!-- adding button and giving some bootstrap -->
-                 <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-                 <a class="btn btn-outline-success" href="#">View</a>
-                 <h4 style="display: inline-block; float: right"><strong>$20</strong></h4> <!-- Price of the product -->
-
-			</div>
-		</div>
-
-		<div class="col-lg-4">
-             <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
-			<div class="box-element product">
-                 <h6><strong>Product</strong></h6>
-				 <hr>
-                 <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-                 <a class="btn btn-outline-success" href="#">View</a>
-                 <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-
-			</div>
-		</div>
-
-		<div class="col-lg-4">
-             <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
-			<div class="box-element product">
-                 <h6><strong>Product</strong></h6>
-				 <hr>
-                 <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-                 <a class="btn btn-outline-success" href="#">View</a>
-                 <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-
-			</div>
-		</div>
-	</div>
-
+                <button class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                <a class="btn btn-outline-success" href="#">View</a>
+                <h4 style="display: inline-block; float: right"><strong>${{product.price|floatformat:2}}</strong></h4>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock content %}
-
-
