@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from models import *
+from .models import *
 import json
 import datetime
-from utils import cookieCart, cartData, guestOrder
+from .utils import cookieCart, cartData, guestOrder
 
 
 def store(request):
